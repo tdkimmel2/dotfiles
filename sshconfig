@@ -1,0 +1,44 @@
+Host *
+    ForwardAgent yes
+    ForwardX11 yes
+    ForwardX11Trusted yes
+
+
+## quick ssh login to KEKCC via command "ssh kekcc" - only need rsa password ##
+## From Martin Ritter ##
+
+# use control hub to use only one ssh channel for all connections.
+# faster connection and password only needed for first connection
+# TODO: changes behavior of ssh a bit so uncomment if you want it 
+# ControlMaster auto
+# ControlPath ~/.ssh/%r@%h:%p.control
+# ControlPersist 60m
+
+#Saved Keys
+#IdentityFile ~/.ssh/id_rsa
+#IdentityFile ~/.ssh/id_dsa
+
+# make all locally present ssh keys available at the remote site
+ForwardAgent yes
+# try to keep the connection alive, this avoids connection timeouts
+ServerAliveInterval 60
+#Have agent save passphrases
+AddKeysToAgent yes
+
+#tdkimmel2 gitHub
+Host github.com-tdkimmel2
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/archdesktop
+
+#KEKCC Forwarding
+Host kekcc
+	IdentityFile ~/.ssh/id_rsa
+    User tkimmel
+    Hostname login.cc.kek.jp
+    Compression yes
+    # Don't connect directly but rather via the login server
+    ProxyCommand ssh sshcc1.kek.jp -W %h:%p
+    # since OpenSSH 7.3 also possible: ProxyJump sshcc1.kek.jp
+Host sshcc1.kek.jp
+    User tkimmel
