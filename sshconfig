@@ -14,22 +14,12 @@ Host *
 # ControlPath ~/.ssh/%r@%h:%p.control
 # ControlPersist 60m
 
-#Saved Keys
-#IdentityFile ~/.ssh/id_rsa
-#IdentityFile ~/.ssh/id_dsa
-
 # make all locally present ssh keys available at the remote site
 ForwardAgent yes
 # try to keep the connection alive, this avoids connection timeouts
 ServerAliveInterval 60
 #Have agent save passphrases
 AddKeysToAgent yes
-
-#tdkimmel2 gitHub
-Host github.com-tdkimmel2
-  HostName github.com
-  User git
-  IdentityFile ~/.ssh/archdesktop
 
 #KEKCC Forwarding
 Host kekcc
@@ -42,3 +32,11 @@ Host kekcc
     # since OpenSSH 7.3 also possible: ProxyJump sshcc1.kek.jp
 Host sshcc1.kek.jp
     User tkimmel
+
+
+#tdkimmel2 gitHub
+Host github.com-tdkimmel2
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/tdkimmel2
+
