@@ -5,6 +5,7 @@ set nocompatible              " required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
+" $ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -22,6 +23,9 @@ Plugin 'gmarik/Vundle.vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+" REMEMBER TO RUN :PluginInstall IF SETTING UP ON NEW MACHINE
+
 " ==============================================================
 
 " ==============================================================
@@ -72,10 +76,6 @@ set expandtab
 
 set number relativenumber
 
-" Useful mappings
-map <F2> :set nonumber! norelativenumber!<CR> " Toggle number/relative number On and Off
-map <F6> :setlocal spell! spelllang=en_us<CR> " Toggle spell checker On and Off
-
 " Powerline
 let g:powerline_pycmd="py"
 
@@ -120,3 +120,24 @@ map <Leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " Pretty code
 let python_highlight_all=1
+
+" ===============================================================
+" Colors
+" ===============================================================
+
+Plugin 'flazz/vim-colorschemes'
+
+colorscheme gruvbox
+
+" if has('gui_running')
+  " set background=dark
+  " colorscheme solarized
+" else
+  " colorscheme zenburn
+" endif
+
+
+" Useful mappings
+map <F2> :set nonumber! norelativenumber!<CR> " Toggle number/relative number On and Off
+map <F6> :setlocal spell! spelllang=en_us<CR> " Toggle spell checker On and Off
+
