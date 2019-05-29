@@ -16,6 +16,9 @@ nnoremap <Leader>k <C-W><C-K>
 nnoremap <Leader>l <C-W><C-L>
 nnoremap <Leader>h <C-W><C-H>
 
+" ZZ (:x) for all splits/tabs
+nnoremap <Leader>Z :xa<CR>
+
 " Tab blocks of code without deselecting it
 vnoremap < <gv " Better indentation
 vnoremap > >gv " Better indentation
