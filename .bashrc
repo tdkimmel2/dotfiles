@@ -14,6 +14,10 @@ if [[ ! "$SSH_AUTH_SOCK" ]]; then
     eval "$(<~/.ssh-agent-thing)"
 fi
 
+#Vim
+alias vimv='vim -O' #Open files in verticle split
+alias vimh='vim -o' #Open files in horizontal split
+alias vimt='vim -p' #Open files in tabs
 
 #Sublime Text
 alias sublime='LANG=en_US.UTF-8 LC_CTYPE=en_US.UTF-8 subl'
@@ -27,7 +31,7 @@ alias fgdir='cd /home/tkimmel/.local/share/Steam/steamapps/compatdata/252690/pfx
 #Ask to remove files
 alias rm='rm -i'
 alias ls='ls --color=auto'
-alias ll='ls -lart'
+alias ll='ls -lart --color=auto'
 
 #SSH Aliases
 alias kekcc='ssh kekcc'
