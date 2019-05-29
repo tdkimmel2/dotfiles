@@ -1,0 +1,43 @@
+#
+# ~/.bashrc
+#
+
+#If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+
+#Run ssh agent on start and make sure only one agent is running
+if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+    ssh-agent > ~/.ssh-agent-thing
+fi
+if [[ ! "$SSH_AUTH_SOCK" ]]; then
+    eval "$(<~/.ssh-agent-thing)"
+fi
+
+
+#Sublime Text
+alias sublime='LANG=en_US.UTF-8 LC_CTYPE=en_US.UTF-8 subl'
+
+#Python
+alias python='python2'
+
+#Directory Shortcuts
+alias fgdir='cd /home/tkimmel/.local/share/Steam/steamapps/compatdata/252690/pfx/drive_c/users/steamuser/Application\ Data/Fantasy\ Grounds'
+
+#Ask to remove files
+alias rm='rm -i'
+alias ls='ls --color=auto'
+alias ll='ls -lart'
+
+#SSH Aliases
+alias kekcc='ssh kekcc'
+alias keklogin='ssh -XY tkimmel@login.cc.kek.jp'
+alias bdaqlogin='ssh -XY tkimmel@bdaq.local.kek.jp'
+alias bdaqepicsport='ssh -L 17668:172.22.16.120:17668 -f -N tkimmel@bdaq.local.kek.jp'
+alias bdaqloggerport='ssh -L 17665:172.22.16.120:17665 -f -N tkimmel@bdaq.local.kek.jp'
+alias bdaqvnc='ssh tkimmel@bdaq.local.kek.jp -XY -L 5900:klmpc02.daqnet:5900'
+alias kekvpn='/opt/cisco/anyconnect/bin/vpn connect kekvpn.kek.jp'
+alias kekdis='/opt/cisco/anyconnect/bin/vpn disconnect'
+
+#Colors
+export PS1="[\[$(tput bold)\]\h\[$(tput sgr0)\]@\[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;88m\]\u\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;15m\]: \[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;69m\]\W\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;15m\]]\\$\[$(tput sgr0)\]"
