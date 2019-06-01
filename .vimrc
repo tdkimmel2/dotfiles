@@ -25,6 +25,7 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 " REMEMBER TO RUN :PluginInstall IF SETTING UP ON NEW MACHINE
+" If the error not an editor command happens then :set filetype=unix
 
 " ==============================================================
 
@@ -41,6 +42,10 @@ set laststatus=2 " Always display the statusline in all windows
 set showtabline=2 " Always display the tabline, even if there is only one tab
 set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
 set t_Co=256
+
+" ==============================================================
+" vimrc
+" ==============================================================
 
 syntax on
 
@@ -76,9 +81,9 @@ set expandtab
 
 set number relativenumber
 
-" ==================================================
-" Python IDE
-" ==================================================
+" Autoclose curly braces and parens
+inoremap { {<CR>}<Esc>ko
+" inoremap ( ()<Esc>i
 
 " ==============================================================
 " Plugins
@@ -87,13 +92,19 @@ Plugin 'tmhedberg/SimpylFold' " Folding Plugin
 Plugin 'vim-syntastic/syntastic' " Check syntax on each save
 Plugin 'nvie/vim-flake8' " Checks PEP 8 formatting
 Plugin 'vim-scripts/indentpython.vim' " Auto indent for Python
+Plugin 'w0rp/ale' " Autodetect errors
+Plugin 'Valloric/YouCompleteMe'
+" YouCompleteMe
+" let g:ycm_autoclose_preview_window_after_completion=1
+map <Leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
 
 
 " Enable Folding
 set foldmethod=indent
 set foldlevel=99
 nnoremap <space> za
-nnoremap <space> zf
+" nnoremap <space> zf
 
 " Enable folding with the Leader f key
 " nnoremap <Leader>f za
@@ -111,12 +122,20 @@ au BufNewFile,BufRead *.py
 " UTF-8 encoding
 set encoding=utf-8
 
-" YouCompleteMe
-let g:ycm_autoclose_preview_window_after_completion=1
-map <Leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
-
 " Pretty code
 let python_highlight_all=1
+
+" ===============================================================
+" C#
+" ===============================================================
+Bundle 'OmniSharp/omnisharp-vim'
+let g:syntastic_cs_checkers = ['code_checker']
+let g:ycm_auto_start_csharp_server = 1
+let g:OmniSharp_server_stdio = 1
+let g:OmniSharp_server_use_mono = 1
+
+" ALE
+let g:ale_linters = { 'cs': ['OmniSharp'] }
 
 " ===============================================================
 " Colors

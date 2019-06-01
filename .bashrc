@@ -28,10 +28,15 @@ alias python='python2'
 #Directory Shortcuts
 alias fgdir='cd /home/tkimmel/.local/share/Steam/steamapps/compatdata/252690/pfx/drive_c/users/steamuser/Application\ Data/Fantasy\ Grounds'
 
-#Ask to remove files
+#Ask to remove/move/copy files
 alias rm='rm -i'
+alias mv='mv -i'
+alias cp='cp -i'
+
+#List options and aliases
 alias ls='ls --color=auto'
 alias ll='ls -lart --color=auto'
+alias lsd='ls -d */'
 
 #SSH Aliases
 alias kekcc='ssh kekcc'
