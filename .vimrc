@@ -81,9 +81,10 @@ set expandtab
 
 set number relativenumber
 
-" Autoclose curly braces and parens
-inoremap { {<CR>}<Esc>ko
-" inoremap ( ()<Esc>i
+" Autoclose braces, curly braces, and parens
+inoremap <Leader>{ {<CR>}<Esc>ko
+inoremap <Leader>( ()<Esc>i
+inoremap <Leader>[ []<Esc>i
 
 " ==============================================================
 " Plugins
