@@ -86,6 +86,13 @@ inoremap <Leader>{ {<CR>}<Esc>ko
 inoremap <Leader>( ()<Esc>i
 inoremap <Leader>[ []<Esc>i
 
+" Useful mappings
+map <F2> :set nonumber! norelativenumber!<CR> " Toggle number/relative number On and Off
+map <F6> :setlocal spell! spelllang=en_us<CR> " Toggle spell checker On and Off
+
+
+
+
 " ==============================================================
 " Plugins
 " ==============================================================
@@ -152,9 +159,4 @@ colorscheme gruvbox
 " else
   " colorscheme zenburn
 " endif
-
-
-" Useful mappings
-map <F2> :set nonumber! norelativenumber!<CR> " Toggle number/relative number On and Off
-map <F6> :setlocal spell! spelllang=en_us<CR> " Toggle spell checker On and Off
 
