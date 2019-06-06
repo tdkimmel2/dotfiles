@@ -86,18 +86,12 @@ inoremap <Leader>{ {<CR>}<Esc>ko
 inoremap <Leader>( ()<Esc>i
 inoremap <Leader>[ []<Esc>i
 
-" Useful mappings
-map <F2> :set nonumber! norelativenumber!<CR> " Toggle number/relative number On and Off
-map <F6> :setlocal spell! spelllang=en_us<CR> " Toggle spell checker On and Off
-
-
-
-
 " ==============================================================
 " Plugins
 " ==============================================================
 Plugin 'tmhedberg/SimpylFold' " Folding Plugin
 Plugin 'vim-syntastic/syntastic' " Check syntax on each save
+let g:syntastic_python_python_exec = '/usr/bin/python2.7'
 Plugin 'nvie/vim-flake8' " Checks PEP 8 formatting
 Plugin 'vim-scripts/indentpython.vim' " Auto indent for Python
 Plugin 'w0rp/ale' " Autodetect errors
@@ -122,10 +116,17 @@ au BufNewFile,BufRead *.py
     \ set tabstop=4 |
     \ set softtabstop=4 |
     \ set shiftwidth=4 |
-    \ set textwidth=79 |
     \ set expandtab |
     \ set autoindent |
     \ set fileformat=unix
+" au BufNewFile,BufRead *.py
+"     \ set tabstop=4 |
+"     \ set softtabstop=4 |
+"     \ set shiftwidth=4 |
+"     \ set textwidth=79 |
+"     \ set expandtab |
+"     \ set autoindent |
+"     \ set fileformat=unix
 
 " UTF-8 encoding
 set encoding=utf-8
@@ -159,4 +160,9 @@ colorscheme gruvbox
 " else
   " colorscheme zenburn
 " endif
+
+
+" Useful mappings
+map <F2> :set nonumber! norelativenumber!<CR> " Toggle number/relative number On and Off
+map <F6> :setlocal spell! spelllang=en_us<CR> " Toggle spell checker On and Off
 
