@@ -43,8 +43,13 @@ set showtabline=2 " Always display the tabline, even if there is only one tab
 set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
 set t_Co=256
 
+
+
+
+" ==============================================================
 " ==============================================================
 " vimrc
+" ==============================================================
 " ==============================================================
 
 syntax on
@@ -81,10 +86,18 @@ set expandtab
 
 set number relativenumber
 
-" Autoclose braces, curly braces, and parens
+" Autoclose quotes, braces, curly braces, and parens
 inoremap <Leader>{ {<CR>}<Esc>ko
 inoremap <Leader>( ()<Esc>i
 inoremap <Leader>[ []<Esc>i
+inoremap <Leader>" ""<Esc>i
+
+" Useful mappings
+map <F2> :set nonumber! norelativenumber!<CR> " Toggle number/relative number On and Off
+map <F6> :setlocal spell! spelllang=en_us<CR> " Toggle spell checker On and Off
+
+
+
 
 " ==============================================================
 " Plugins
@@ -160,9 +173,3 @@ colorscheme gruvbox
 " else
   " colorscheme zenburn
 " endif
-
-
-" Useful mappings
-map <F2> :set nonumber! norelativenumber!<CR> " Toggle number/relative number On and Off
-map <F6> :setlocal spell! spelllang=en_us<CR> " Toggle spell checker On and Off
-
