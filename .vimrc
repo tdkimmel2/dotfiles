@@ -92,7 +92,7 @@ nnoremap <Leader>l <C-W><C-L>
 nnoremap <Leader>h <C-W><C-H>
 
 " Set :noh to be <Leader> n in normal mode
-nnoremap <Leader>n :noh
+nnoremap <Leader>n :noh<CR>
 
 " Saving
 nnoremap <Leader>Z :xa<CR> " ZZ (:x) for all splits/tabs
