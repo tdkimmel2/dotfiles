@@ -1,40 +1,4 @@
 " ==============================================================
-" Vundle Plugin Stuff
-" ==============================================================
-"
-" Need to install Vundle in order to install other plugins with :PluginInstall
-" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-"
-set nocompatible              " required
-filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
-" $ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-
-" add all your plugins here (note older versions of Vundle
-" used Bundle instead of Plugin)
-
-" ...
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-
-" REMEMBER TO RUN :PluginInstall IF SETTING UP ON NEW MACHINE
-" If the error - not an editor command - happens then :set filetype=unix
-
-" ==============================================================
-
-
-
 " ==============================================================
 " ==============================================================
 " vimrc
@@ -114,8 +78,50 @@ au BufNewFile,BufRead *.py
 set encoding=utf-8
 
 
+
+" ==============================================================
+" ==============================================================
+" Vundle Plugin Stuff
+" ==============================================================
+" ==============================================================
+"
+" Need to install Vundle in order to install other plugins with :PluginInstall
+" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+"
+set nocompatible              " required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+" $ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+" add all your plugins here (note older versions of Vundle
+" used Bundle instead of Plugin)
+
+" ...
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+" REMEMBER TO RUN :PluginInstall IF SETTING UP ON NEW MACHINE
+" If the error - not an editor command - happens then :set filetype=unix
+
+" ==============================================================
+
+
+
+" ==============================================================
 " ==============================================================
 " Plugins
+" ==============================================================
 " ==============================================================
 
 " Powerline
@@ -171,17 +177,6 @@ nnoremap <space> za
 " Pretty code
 let python_highlight_all=1
 
-" ===============================================================
-" C#
-" ===============================================================
-Bundle 'OmniSharp/omnisharp-vim'
-let g:syntastic_cs_checkers = ['code_checker']
-let g:ycm_auto_start_csharp_server = 1
-let g:OmniSharp_server_stdio = 1
-let g:OmniSharp_server_use_mono = 1
-
-" ALE
-let g:ale_linters = { 'cs': ['OmniSharp'] }
 
 " ===============================================================
 " Colors
@@ -197,3 +192,16 @@ set background=dark
 " else
   " colorscheme zenburn
 " endif
+
+
+" ===============================================================
+" C#
+" ===============================================================
+Bundle 'OmniSharp/omnisharp-vim'
+let g:syntastic_cs_checkers = ['code_checker']
+let g:ycm_auto_start_csharp_server = 1
+let g:OmniSharp_server_stdio = 1
+let g:OmniSharp_server_use_mono = 1
+
+" ALE
+let g:ale_linters = { 'cs': ['OmniSharp'] }
