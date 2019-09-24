@@ -121,7 +121,7 @@ alias mv="mv -i"
 alias cp="cp -i"
 
 #Source root
-source /home/taylor/Root610/bin/thisroot.sh
+source /home/taylor/Root610/bin/thisroot.sh #Source root when a new shell is opened
 
 #Vim
 alias vimv="vim -O" #Open files in verticle split
@@ -129,14 +129,17 @@ alias vimh="vim -o" #Open files in horizontal split
 alias vimt="vim -p" #Open files in tabs
 
 #Python
-alias python='python2'
+alias python='python2' #Make the default python command use python2 rather than python3
+
+#ps command
+alias pssh='ps aux | grep ssh' #See currently running ssh processes
 
 #scp
 alias scpnbe="scp tkimmel@login.cc.kek.jp:/home/belle/tkimmel/belle/neurobayes/dsp/expert.root ./."
 alias scpnbr="scp tkimmel@login.cc.kek.jp:/home/belle/tkimmel/belle/neurobayes/dsp/root/allmfrecon.root ./."
 
 alias ll="ls -lart"
-alias lsd="ls -d */"
+alias lsd="ls -d */" #List only directories
 alias keklogin="ssh -XY tkimmel@login.cc.kek.jp"
 alias bdaqlogin="ssh -XY tkimmel@bdaq.local.kek.jp"
 alias bdaqepicsport="ssh -L 17668:172.22.16.120:17668 -f -N tkimmel@bdaq.local.kek.jp"
