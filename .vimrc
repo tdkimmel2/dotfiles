@@ -26,9 +26,10 @@ nnoremap <Leader>j <C-W><C-J>
 nnoremap <Leader>k <C-W><C-K>
 nnoremap <Leader>l <C-W><C-L>
 
-" Saving
+" Saving/Quitting
 nnoremap <Leader>Z :xa<CR> " ZZ (:x) for all splits/tabs
 nnoremap <Leader>w :w<CR> " Write current file
+nnoremap <Leader>Q :q!<CR> " Quit current file without writing
 
 " Prevent new line creation after 80 characters
 set wrap
