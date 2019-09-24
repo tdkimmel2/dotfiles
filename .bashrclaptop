@@ -142,6 +142,8 @@ alias bdaqlogin="ssh -XY tkimmel@bdaq.local.kek.jp"
 alias bdaqepicsport="ssh -L 17668:172.22.16.120:17668 -f -N tkimmel@bdaq.local.kek.jp"
 alias bdaqloggerport="ssh -L 17665:172.22.16.120:17665 -f -N tkimmel@bdaq.local.kek.jp"
 alias bdaqvnc="ssh tkimmel@bdaq.local.kek.jp -XY -L 5900:klmpc02.daqnet:5900"
+alias bdaqdqm="ssh -L 8082:dqmsrv1:8082 -f -N tkimmel@bdaq.local.kek.jp"
+alias bdaqdqmexreco="ssh -L 8083:dqmsrv1:8083 -f -N tkimmel@bdaq.local.kek.jp"
 alias kekvpn="/opt/cisco/anyconnect/bin/vpn connect kekvpn.kek.jp"
 alias kekdis="/opt/cisco/anyconnect/bin/vpn disconnect"
 
