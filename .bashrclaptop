@@ -133,6 +133,7 @@ alias python='python2' #Make the default python command use python2 rather than 
 
 #ps command
 alias pssh='ps aux | grep ssh' #See currently running ssh processes
+alias psbdaq='ps aux | grep bdaq' #See current bdaq connections
 
 #scp
 alias scpnbe="scp tkimmel@login.cc.kek.jp:/home/belle/tkimmel/belle/neurobayes/dsp/expert.root ./."
@@ -142,9 +143,10 @@ alias ll="ls -lart"
 alias lsd="ls -d */" #List only directories
 alias keklogin="ssh -XY tkimmel@login.cc.kek.jp"
 alias bdaqlogin="ssh -XY tkimmel@bdaq.local.kek.jp"
+alias klmpc02vnc="ssh -L 5900:klmpc02.daqnet:5900 -f -N tkimmel@bdaq.local.kek.jp"
+#alias klmpc02vnc="ssh tkimmel@bdaq.local.kek.jp -XY -L 5900:klmpc02.daqnet:5900"
 alias bdaqepicsport="ssh -L 17668:172.22.16.120:17668 -f -N tkimmel@bdaq.local.kek.jp"
 alias bdaqloggerport="ssh -L 17665:172.22.16.120:17665 -f -N tkimmel@bdaq.local.kek.jp"
-alias bdaqvnc="ssh tkimmel@bdaq.local.kek.jp -XY -L 5900:klmpc02.daqnet:5900"
 alias bdaqdqm="ssh -L 8082:dqmsrv1:8082 -f -N tkimmel@bdaq.local.kek.jp"
 alias bdaqdqmexreco="ssh -L 8083:dqmsrv1:8083 -f -N tkimmel@bdaq.local.kek.jp"
 alias kekvpn="/opt/cisco/anyconnect/bin/vpn connect kekvpn.kek.jp"
