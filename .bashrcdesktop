@@ -14,6 +14,14 @@ if [[ ! "$SSH_AUTH_SOCK" ]]; then
     eval "$(<~/.ssh-agent-thing)"
 fi
 
+#Ask to remove/move/copy files
+alias rm='rm -i'
+alias mv='mv -i'
+alias cp='cp -i'
+
+#Source ROOT
+source ~/Root610/bin/thisroot.sh
+
 #Vim
 alias vimv='vim -O' #Open files in verticle split
 alias vimh='vim -o' #Open files in horizontal split
@@ -23,15 +31,14 @@ alias vimt='vim -p' #Open files in tabs
 alias sublime='LANG=en_US.UTF-8 LC_CTYPE=en_US.UTF-8 subl'
 
 #Python
-alias python='python2'
+alias python='python2' #Make the default python command use python2 rather than python3
+
+#ps command
+alias pssh='ps aux | grep ssh' #See currently running ssh processes
+alias psbdaq='ps aux | grep bdaq' #See current bdaq connections
 
 #Directory Shortcuts
 alias fgdir='cd /home/tkimmel/.local/share/Steam/steamapps/compatdata/252690/pfx/drive_c/users/steamuser/Application\ Data/Fantasy\ Grounds'
-
-#Ask to remove/move/copy files
-alias rm='rm -i'
-alias mv='mv -i'
-alias cp='cp -i'
 
 #List options and aliases
 alias ls='ls --color=auto'
