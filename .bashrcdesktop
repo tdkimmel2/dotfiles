@@ -20,7 +20,7 @@ alias mv='mv -i'
 alias cp='cp -i'
 
 #Source ROOT
-source ~/Root610/bin/thisroot.sh
+#source ~/Root610/bin/thisroot.sh
 
 #Vim
 alias vimv='vim -O' #Open files in verticle split
