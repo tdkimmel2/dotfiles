@@ -187,6 +187,7 @@ Plugin 'flazz/vim-colorschemes'
 
 colorscheme gruvbox
 set background=dark
+set hlsearch
 " if has('gui_running')
   " set background=dark
   " colorscheme solarized
