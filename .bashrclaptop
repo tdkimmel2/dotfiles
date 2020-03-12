@@ -139,8 +139,8 @@ alias psbdaq='ps aux | grep bdaq' #See current bdaq connections
 alias scpnbe="scp tkimmel@login.cc.kek.jp:/home/belle/tkimmel/belle/neurobayes/dsp/expert.root ./."
 alias scpnbr="scp tkimmel@login.cc.kek.jp:/home/belle/tkimmel/belle/neurobayes/dsp/root/allmfrecon.root ./."
 
-alias rsync='rsync -avzh --progress --stats'
-alias ll="ls -lart"
+alias rsync="rsync -avzh --progress --stats"
+alias ll="ls -lhart --color=auto"
 alias lsd="ls -d */" #List only directories
 alias keklogin="ssh -XY tkimmel@login.cc.kek.jp"
 alias bdaqlogin="ssh -XY tkimmel@bdaq.local.kek.jp"

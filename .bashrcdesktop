@@ -42,7 +42,7 @@ alias fgdir='cd /home/tkimmel/.local/share/Steam/steamapps/compatdata/252690/pfx
 
 #List options and aliases
 alias ls='ls --color=auto'
-alias ll='ls -lart --color=auto'
+alias ll='ls -lhart --color=auto'
 alias lsd='ls -d */'
 
 #SSH Aliases
