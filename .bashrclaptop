@@ -142,7 +142,9 @@ alias scpnbr="scp tkimmel@login.cc.kek.jp:/home/belle/tkimmel/belle/neurobayes/d
 alias rsync="rsync -avzh --progress --stats"
 alias ll="ls -lhart --color=auto"
 alias lsd="ls -d */" #List only directories
-alias keklogin="ssh -XY tkimmel@login.cc.kek.jp"
+alias jp='ssh -L 8004:localhost:8004 tkimmel@login.cc.kek.jp'
+alias kekcctun="ssh -XY kekcctun"
+alias keklogin="ssh -XY kekcc"
 alias bdaqlogin="ssh -XY tkimmel@bdaq.local.kek.jp"
 alias klmpc02vnc="ssh -L 5900:klmpc02.daqnet:5900 -f -N tkimmel@bdaq.local.kek.jp"
 #alias klmpc02vnc="ssh tkimmel@bdaq.local.kek.jp -XY -L 5900:klmpc02.daqnet:5900"
