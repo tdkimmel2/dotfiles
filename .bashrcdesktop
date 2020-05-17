@@ -5,6 +5,11 @@
 #If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+#Setting Bash prompt. Capitalizes username and host if root user (my root user uses this same config file)
+if [ "$EUID" -ne 0 ]
+    then export PS1="[\[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;88m\]\u\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;15m\]@\[$(tput bold)\]\h\[$(tput sgr0)\]: \[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;69m\]\W\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;15m\]]\\$\[$(tput sgr0)\]"
+    else export PS1="[\[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;88m\]ROOT\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;15m\]@\[$(tput bold)\]$(hostname | awk '{print toupper($0)}') \[$(tput sgr0)\]: \[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;69m\]\W\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;15m\]]\\$\[$(tput sgr0)\]"
+fi
 
 #Run ssh agent on start and make sure only one agent is running
 if ! pgrep -u "$USER" ssh-agent > /dev/null; then
@@ -22,6 +27,19 @@ alias cp='cp -i'
 #Source ROOT
 #source ~/Root610/bin/thisroot.sh
 
+####################################################################
+###############################Aliases##############################
+####################################################################
+
+alias p='sudo pacman'
+alias SS='sudo systemctl'
+alias ccat='highlight --out-format=ansi'
+alias starwars='telnet towel.blinkenlights.nl'
+
+alias wthr='curl wttr.in'
+
+alias cln='sudo paccache -rk1' # Cleans out pacman cache and only keeps previous version, not all previous versions
+
 #Vim
 alias vimv='vim -O' #Open files in verticle split
 alias vimh='vim -o' #Open files in horizontal split
@@ -34,15 +52,15 @@ alias sublime='LANG=en_US.UTF-8 LC_CTYPE=en_US.UTF-8 subl'
 alias python='python2' #Make the default python command use python2 rather than python3
 
 #ps command
-alias pssh='ps aux | grep ssh' #See currently running ssh processes
-alias psbdaq='ps aux | grep bdaq' #See current bdaq connections
+alias pssh='ps aux | grep ssh' # See currently running ssh processes
+alias psbdaq='ps aux | grep bdaq' # See current bdaq connections
 
 #Directory Shortcuts
 alias fgdir='cd /home/tkimmel/.local/share/Steam/steamapps/compatdata/252690/pfx/drive_c/users/steamuser/Application\ Data/Fantasy\ Grounds'
 
 #List options and aliases
-alias ls='ls --color=auto'
-alias ll='ls -lhart --color=auto'
+alias ls='ls -hN --color=auto --group-directories-first'
+alias ll='ls -lhart --color=auto --group-directories-first'
 alias lsd='ls -d */'
 
 #SSH Aliases
@@ -54,7 +72,3 @@ alias bdaqloggerport='ssh -L 17665:172.22.16.120:17665 -f -N tkimmel@bdaq.local.
 alias bdaqvnc='ssh tkimmel@bdaq.local.kek.jp -XY -L 5900:klmpc02.daqnet:5900'
 alias kekvpn='/opt/cisco/anyconnect/bin/vpn connect kekvpn.kek.jp'
 alias kekdis='/opt/cisco/anyconnect/bin/vpn disconnect'
-
-#Colors
-#export PS1="[\[$(tput bold)\]\h\[$(tput sgr0)\]@\[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;88m\]\u\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;15m\]: \[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;69m\]\W\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;15m\]]\\$\[$(tput sgr0)\]"
-export PS1="[\[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;88m\]\u\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;15m\]@\[$(tput bold)\]\h\[$(tput sgr0)\]: \[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;69m\]\W\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;15m\]]\\$\[$(tput sgr0)\]"
