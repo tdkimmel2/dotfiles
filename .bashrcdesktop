@@ -29,7 +29,7 @@ alias cp='cp -i'
 ####################################################################
 
 alias pcm='sudo pacman'
-alias mkgpkg='makepkg -si' # Make package from AUR
+alias mkpkg='makepkg -si' # Make package from AUR
 alias SS='sudo systemctl'
 alias ccat='highlight --out-format=ansi'
 alias starwars='telnet towel.blinkenlights.nl'
