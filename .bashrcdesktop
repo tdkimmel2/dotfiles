@@ -2,16 +2,16 @@
 # ~/.bashrc
 #
 
-#If not running interactively, don't do anything
+# If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-#Setting Bash prompt. Capitalizes username and host if root user (my root user uses this same config file)
+# Setting Bash prompt. Capitalizes username and host if root user (my root user uses this same config file)
 if [ "$EUID" -ne 0 ]
     then export PS1="[\[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;88m\]\u\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;15m\]@\[$(tput bold)\]\h\[$(tput sgr0)\]: \[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;69m\]\W\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;15m\]]\\$\[$(tput sgr0)\]"
     else export PS1="[\[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;88m\]ROOT\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;15m\]@\[$(tput bold)\]$(hostname | awk '{print toupper($0)}') \[$(tput sgr0)\]: \[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;69m\]\W\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;15m\]]\\$\[$(tput sgr0)\]"
 fi
 
-#Run ssh agent on start and make sure only one agent is running
+# Run ssh agent on start and make sure only one agent is running
 if ! pgrep -u "$USER" ssh-agent > /dev/null; then
     ssh-agent > ~/.ssh-agent-thing
 fi
@@ -19,51 +19,49 @@ if [[ ! "$SSH_AUTH_SOCK" ]]; then
     eval "$(<~/.ssh-agent-thing)"
 fi
 
-#Ask to remove/move/copy files
+# Ask to move/remove/copy files
 alias rm='rm -i'
 alias mv='mv -i'
 alias cp='cp -i'
-
-#Source ROOT
-#source ~/Root610/bin/thisroot.sh
 
 ####################################################################
 ###############################Aliases##############################
 ####################################################################
 
-alias p='sudo pacman'
+alias pcm='sudo pacman'
+alias mkgpkg='makepkg -si' # Make package from AUR
 alias SS='sudo systemctl'
 alias ccat='highlight --out-format=ansi'
 alias starwars='telnet towel.blinkenlights.nl'
 
+# Display weather
 alias wthr='curl wttr.in'
 
 alias cln='sudo paccache -rk1' # Cleans out pacman cache and only keeps previous version, not all previous versions
 
-#Vim
-alias vimv='vim -O' #Open files in verticle split
-alias vimh='vim -o' #Open files in horizontal split
-alias vimt='vim -p' #Open files in tabs
+# Vim
+alias vimv='vim -O' # Open files in verticle split
+alias vimh='vim -o' # Open files in horizontal split
+alias vimt='vim -p' # Open files in tabs
 
-#Sublime Text
+# Sublime Text
 alias sublime='LANG=en_US.UTF-8 LC_CTYPE=en_US.UTF-8 subl'
 
-#Python
-alias python='python2' #Make the default python command use python2 rather than python3
+# Python
+alias python='python2' # Make the default python command use python2 rather than python3
 
-#ps command
-alias pssh='ps aux | grep ssh' # See currently running ssh processes
-alias psbdaq='ps aux | grep bdaq' # See current bdaq connections
+# ps command
+alias psg='ps aux | grep'
 
-#Directory Shortcuts
+# Directory Shortcuts
 alias fgdir='cd /home/tkimmel/.local/share/Steam/steamapps/compatdata/252690/pfx/drive_c/users/steamuser/Application\ Data/Fantasy\ Grounds'
 
-#List options and aliases
+# List options and aliases
 alias ls='ls -hN --color=auto --group-directories-first'
 alias ll='ls -lhart --color=auto --group-directories-first'
-alias lsd='ls -d */'
+alias lsd='ls -d */' # List only directories
 
-#SSH Aliases
+# SSH Aliases
 alias kekcc='ssh kekcc'
 alias keklogin='ssh -XY tkimmel@login.cc.kek.jp'
 alias bdaqlogin='ssh -XY tkimmel@bdaq.local.kek.jp'
