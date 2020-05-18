@@ -54,6 +54,9 @@ inoremap <Leader>( ()<Left>
 inoremap <Leader>[ []<Left>
 inoremap <Leader>" ""<Left>
 
+" Move to end of line in insert mode
+inoremap <Leader>AA <Esc>A
+
 " Useful mappings
 map <F2> :set nonumber! norelativenumber!<CR> " Toggle number/relative number On and Off
 map <F6> :setlocal spell! spelllang=en_us<CR> " Toggle spell checker On and Off
