@@ -37,7 +37,7 @@ alias starwars='telnet towel.blinkenlights.nl'
 # Display weather
 alias wthr='curl wttr.in'
 
-alias cln='sudo paccache -rk1' # Cleans out pacman cache and only keeps previous version, not all previous versions
+alias cln='yay -Yc && sudo paccache -rk1' # Cleans out pacman cache and only keeps previous version, not all previous versions
 
 # Vim
 alias vimv='vim -O' # Open files in verticle split
