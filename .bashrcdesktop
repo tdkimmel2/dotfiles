@@ -19,47 +19,41 @@ if [[ ! "$SSH_AUTH_SOCK" ]]; then
     eval "$(<~/.ssh-agent-thing)"
 fi
 
+####################################################################
+###############################Aliases##############################
+####################################################################
+
 # Ask to move/remove/copy files
 alias rm='rm -i'
 alias mv='mv -i'
 alias cp='cp -i'
 
-####################################################################
-###############################Aliases##############################
-####################################################################
+# List options and aliases
+alias ls='ls -hN --color=auto --group-directories-first'
+alias ll='ls -lhart --color=auto --group-directories-first'
+alias lsd='ls -d */' # List only directories
 
 alias pcm='sudo pacman'
 alias mkpkg='makepkg -si' # Make package from AUR
 alias SS='sudo systemctl'
-alias ccat='highlight --out-format=ansi'
+alias ccat='highlight --out-format=ansi' # cat with syntax highlighting shortcut
 alias starwars='telnet towel.blinkenlights.nl'
-
-# Display weather
-alias wthr='curl wttr.in'
-
-alias cln='yay -Yc && sudo paccache -rk1' # Cleans out pacman cache and only keeps previous version, not all previous versions
+alias wthr='curl wttr.in' # Display weather
+alias als='alsamixer' # Shortcut for alsamixer
+alias ms='mailsync' # Shortcut for mailsync
+alias cln='yay -Yc && sudo paccache -rk1' # Cleans out pacman cache and only keeps last version, not all previous versions
 
 # Vim
 alias vimv='vim -O' # Open files in verticle split
 alias vimh='vim -o' # Open files in horizontal split
 alias vimt='vim -p' # Open files in tabs
 
-# Sublime Text
-alias sublime='LANG=en_US.UTF-8 LC_CTYPE=en_US.UTF-8 subl'
-
-# Python
+alias sublime='LANG=en_US.UTF-8 LC_CTYPE=en_US.UTF-8 subl' # Sublime Text
 alias python='python2' # Make the default python command use python2 rather than python3
-
-# ps command
-alias psg='ps aux | grep'
+alias psg='ps aux | grep' # ps command
 
 # Directory Shortcuts
 alias fgdir='cd /home/tkimmel/.local/share/Steam/steamapps/compatdata/252690/pfx/drive_c/users/steamuser/Application\ Data/Fantasy\ Grounds'
-
-# List options and aliases
-alias ls='ls -hN --color=auto --group-directories-first'
-alias ll='ls -lhart --color=auto --group-directories-first'
-alias lsd='ls -d */' # List only directories
 
 # SSH Aliases
 alias kekcc='ssh kekcc'
