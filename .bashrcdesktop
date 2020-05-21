@@ -19,6 +19,9 @@ if [[ ! "$SSH_AUTH_SOCK" ]]; then
     eval "$(<~/.ssh-agent-thing)"
 fi
 
+# Source root
+source /home/tkimmel/root/bin/thisroot.sh
+
 ####################################################################
 ###############################Aliases##############################
 ####################################################################
@@ -42,6 +45,7 @@ alias wthr='curl wttr.in' # Display weather
 alias als='alsamixer' # Shortcut for alsamixer
 alias ms='mailsync' # Shortcut for mailsync
 alias cln='yay -Yc && sudo paccache -rk1' # Cleans out pacman cache and only keeps last version, not all previous versions
+alias yta='youtube-dl -x -f bestaudio' # Download only audio from youtube link
 
 # Vim
 alias vimv='vim -O' # Open files in verticle split
