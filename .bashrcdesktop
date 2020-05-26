@@ -52,7 +52,6 @@ alias vimv='vim -O' # Open files in verticle split
 alias vimh='vim -o' # Open files in horizontal split
 alias vimt='vim -p' # Open files in tabs
 
-alias sublime='LANG=en_US.UTF-8 LC_CTYPE=en_US.UTF-8 subl' # Sublime Text
 alias python='python2' # Make the default python command use python2 rather than python3
 alias psg='ps aux | grep' # ps command
 
