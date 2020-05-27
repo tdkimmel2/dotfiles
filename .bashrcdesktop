@@ -33,6 +33,7 @@ alias cp='cp -i'
 
 # List options and aliases
 alias ls='ls -hN --color=auto --group-directories-first'
+alias sl='ls -hN --color=auto --group-directories-first'
 alias ll='ls -lhart --color=auto --group-directories-first'
 alias lsd='ls -d */' # List only directories
 
