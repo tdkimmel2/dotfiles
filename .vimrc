@@ -27,17 +27,17 @@ nnoremap <Leader>k <C-W><C-K>
 nnoremap <Leader>l <C-W><C-L>
 
 " Saving/Quitting
-nnoremap <Leader>Z :xa<CR> " ZZ (:x) for all splits/tabs
-nnoremap <Leader>w :w<CR> " Write current file
-nnoremap <Leader>Q :q!<CR> " Quit current file without writing
+nnoremap <Leader>Z :xa<CR>
+nnoremap <Leader>w :w<CR>
+nnoremap <Leader>Q :q!<CR>
 
 " Prevent new line creation after 80 characters
 set wrap
 set textwidth=0
 
 " Tab blocks of code without deselecting it
-vnoremap < <gv " Better indentation
-vnoremap > >gv " Better indentation
+vnoremap < <gv
+vnoremap > >gv
 " Tab/Indent Customization
 set tabstop=4
 set softtabstop=4
@@ -53,13 +53,15 @@ inoremap <Leader>{ {}<Left>
 inoremap <Leader>( ()<Left>
 inoremap <Leader>[ []<Left>
 inoremap <Leader>" ""<Left>
+inoremap <Leader>' ''<Left>
 
-" Move to end of line in insert mode
-inoremap <Leader>AA <Esc>A
+" Useful cursor movement in insert mode
+inoremap <Leader>aa <Esc>A
+inoremap <Leader>ll <Right>
 
 " Useful mappings
-map <F2> :set nonumber! norelativenumber!<CR> " Toggle number/relative number On and Off
-map <F6> :setlocal spell! spelllang=en_us<CR> " Toggle spell checker On and Off
+map <F2> :set nonumber! norelativenumber!<CR>
+map <F6> :setlocal spell! spelllang=en_us<CR>
 
 " PEP 8 Indentation
 au BufNewFile,BufRead *.py
