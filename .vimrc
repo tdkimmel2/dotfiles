@@ -56,7 +56,6 @@ inoremap <Leader>" ""<Left>
 inoremap <Leader>' ''<Left>
 
 " Useful cursor movement in insert mode
-inoremap <Leader>aa <Esc>A
 inoremap <Leader>ll <Right>
 
 " Useful mappings
