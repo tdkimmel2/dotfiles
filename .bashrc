@@ -1,0 +1,78 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+# Setting Bash prompt. Capitalizes username and host if root user (my root user uses this same config file)
+if [ "$EUID" -ne 0 ]
+    then export PS1="[\[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;88m\]\u\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;15m\]@\[$(tput bold)\]\h\[$(tput sgr0)\]: \[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;69m\]\W\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;15m\]]\\$\[$(tput sgr0)\]"
+    else export PS1="[\[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;88m\]ROOT\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;15m\]@\[$(tput bold)\]$(hostname | awk '{print toupper($0)}') \[$(tput sgr0)\]: \[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;69m\]\W\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;15m\]]\\$\[$(tput sgr0)\]"
+fi
+
+#Add scripts directory to $PATH
+export PATH=$PATH:~/.scripts
+
+# Ignore duplicate entries in bash history that appear consecutively
+export HISTCONTROL=ignoreboth:erasedups
+
+# Run ssh agent on start and make sure only one agent is running
+if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+    ssh-agent > ~/.ssh-agent-thing
+fi
+if [[ ! "$SSH_AUTH_SOCK" ]]; then
+    eval "$(<~/.ssh-agent-thing)"
+fi
+
+# Source root
+source /home/tkimmel/root/bin/thisroot.sh
+
+####################################################################
+###############################Aliases##############################
+####################################################################
+
+# Ask to move/remove/copy files
+alias rm='rm -i'
+alias mv='mv -i'
+alias cp='cp -i'
+
+# List options and aliases
+alias ls='ls -hN --color=auto --group-directories-first'
+alias sl='ls -hN --color=auto --group-directories-first'
+alias ll='ls -lhart --color=auto --group-directories-first'
+alias lsd='ls -d */' # List only directories
+
+alias pcm='sudo pacman'
+alias mkpkg='makepkg -si' # Make package from AUR
+alias SS='sudo systemctl'
+alias ccat='highlight --out-format=ansi' # cat with syntax highlighting shortcut
+alias starwars='telnet towel.blinkenlights.nl'
+alias wthr='curl wttr.in' # Display weather
+alias als='alsamixer' # Shortcut for alsamixer
+alias ms='mailsync' # Shortcut for mailsync
+alias cln='yay -Yc && sudo paccache -rk1' # Cleans out pacman cache and only keeps last version, not all previous versions
+alias yta='youtube-dl -x -f bestaudio' # Download only audio from youtube link
+
+# Vim
+alias vimv='vim -O' # Open files in verticle split
+alias vimh='vim -o' # Open files in horizontal split
+alias vimt='vim -p' # Open files in tabs
+
+alias python='python2' # Make the default python command use python2 rather than python3
+alias psg='ps aux | grep' # ps command
+
+# Directory Shortcuts
+alias fgdir='cd /home/tkimmel/.local/share/Steam/steamapps/compatdata/252690/pfx/drive_c/users/steamuser/Application\ Data/Fantasy\ Grounds'
+
+# SSH Aliases
+alias kekcc='ssh kekcc'
+alias keklogin='ssh -XY tkimmel@login.cc.kek.jp'
+alias bdaqlogin='ssh -XY tkimmel@bdaq.local.kek.jp'
+alias bdaqepicsport='ssh -L 17668:172.22.16.120:17668 -f -N tkimmel@bdaq.local.kek.jp'
+alias bdaqloggerport='ssh -L 17665:172.22.16.120:17665 -f -N tkimmel@bdaq.local.kek.jp'
+alias bdaqvnc='ssh tkimmel@bdaq.local.kek.jp -XY -L 5900:klmpc02.daqnet:5900'
+alias kekvpn='/opt/cisco/anyconnect/bin/vpn connect kekvpn.kek.jp'
+alias kekdis='/opt/cisco/anyconnect/bin/vpn disconnect'
+alias pihl='ssh 192.168.1.111'
+alias pihw='ssh kimmelpi.us.to'
