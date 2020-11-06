@@ -25,6 +25,9 @@ if [[ ! "$SSH_AUTH_SOCK" ]]; then
     eval "$(<~/.ssh-agent-thing)"
 fi
 
+# Set vi mode for command line
+set -o vi
+
 # Source root
 source /home/tkimmel/root/bin/thisroot.sh
 
@@ -43,7 +46,7 @@ alias sl='ls -hN --color=auto --group-directories-first'
 alias ll='ls -lhart --color=auto --group-directories-first'
 alias lsd='ls -d */' # List only directories
 
-alias pcm='sudo pacman'
+alias pcm='sudo pacman' # -S to install, -Rns to remove+dependencies+config files
 alias mkpkg='makepkg -si' # Make package from AUR
 alias SS='sudo systemctl'
 alias ccat='highlight --out-format=ansi' # cat with syntax highlighting shortcut
