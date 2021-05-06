@@ -69,11 +69,5 @@ alias vimt='vim -p' # Open files in tabs
 
 # SSH Aliases
 alias kekcc='ssh kekcc'
-alias keklogin='ssh -XY tkimmel@login.cc.kek.jp'
-alias kekvpn='sudo openconnect -u tkimmel/vpn kekvpn.kek.jp'
-alias bdaqlogin='ssh -XY tkimmel@bdaq.local.kek.jp'
-alias bdaqepicsport='ssh -L 17668:172.22.16.120:17668 -f -N tkimmel@bdaq.local.kek.jp'
-alias bdaqloggerport='ssh -L 17665:172.22.16.120:17665 -f -N tkimmel@bdaq.local.kek.jp'
-alias bdaqvnc='ssh tkimmel@bdaq.local.kek.jp -XY -L 5900:klmpc02.daqnet:5900'
 alias pil='ssh 192.168.1.111'
 alias piw='ssh kimmelpi.us.to'
