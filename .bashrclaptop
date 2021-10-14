@@ -60,6 +60,7 @@ alias python='python2' # Make the default python command use python2 rather than
 alias psg='ps aux | grep' # ps command
 alias google-chrome='google-chrome-stable & disown & exit'
 alias naut='nautilus . & disown & exit'
+alias jn='jupyter notebook'
 alias disex='disown & exit'
 
 # Vim
