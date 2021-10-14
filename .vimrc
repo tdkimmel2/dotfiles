@@ -164,6 +164,7 @@ Plugin 'nvie/vim-flake8' " Checks PEP 8 formatting
 Plugin 'vim-scripts/indentpython.vim' " Auto indent for Python
 Plugin 'w0rp/ale' " Autodetect errors
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'tpope/vim-surround'
 " YouCompleteMe
 " let g:ycm_autoclose_preview_window_after_completion=1
 map <Leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
@@ -199,6 +200,11 @@ set hlsearch
   " colorscheme zenburn
 " endif
 
+" ===============================================================
+" C#
+" ===============================================================
+Plugin 'OmniCppComplete'
+
 
 " ===============================================================
 " C#
@@ -215,3 +221,8 @@ let g:ale_linters = { 'cs': ['OmniSharp'] }
 " XML
 Plugin 'sukima/xmledit'
 Plugin 'matchit.zip'
+
+" LaTeX
+Plugin 'LaTeX-Suite-aka-Vim-LaTeX'
+let g:Imap_UsePlaceHolders = 0 " Disable <++> placeholders after some shortcuts
+let g:Tex_SmartKeyQuote = 0 " Disable automatic insert of '' when " is typed

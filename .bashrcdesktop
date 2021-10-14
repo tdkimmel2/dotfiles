@@ -56,6 +56,9 @@ alias als='alsamixer' # Shortcut for alsamixer
 alias ms='mailsync' # Shortcut for mailsync
 alias cln='yay -Yc && sudo paccache -rk1' # Cleans out pacman cache and only keeps last version, not all previous versions
 alias yta='youtube-dl -x -f bestaudio' # Download only audio from youtube link
+alias jn='jupyter notebook' # Open jupyter notebook
+
+alias disex='disown & exit' # Disown from terminal then exit terminal
 
 # Vim
 alias vimv='vim -O' # Open files in verticle split
@@ -63,6 +66,7 @@ alias vimh='vim -o' # Open files in horizontal split
 alias vimt='vim -p' # Open files in tabs
 
 alias python='python2' # Make the default python command use python2 rather than python3
+alias py='python3'
 alias psg='ps aux | grep' # ps command
 
 # Directory Shortcuts
@@ -75,7 +79,6 @@ alias bdaqlogin='ssh -XY tkimmel@bdaq.local.kek.jp'
 alias bdaqepicsport='ssh -L 17668:172.22.16.120:17668 -f -N tkimmel@bdaq.local.kek.jp'
 alias bdaqloggerport='ssh -L 17665:172.22.16.120:17665 -f -N tkimmel@bdaq.local.kek.jp'
 alias bdaqvnc='ssh tkimmel@bdaq.local.kek.jp -XY -L 5900:klmpc02.daqnet:5900'
-alias kekvpn='/opt/cisco/anyconnect/bin/vpn connect kekvpn.kek.jp'
-alias kekdis='/opt/cisco/anyconnect/bin/vpn disconnect'
-alias pihl='ssh 192.168.1.111'
-alias pihw='ssh kimmelpi.us.to'
+alias kekvpn='sudo openconnect -u tkimmel/vpn kekvpn.kek.jp'
+alias pil='ssh 192.168.1.111'
+alias piw='ssh kimmelpi.us.to'
