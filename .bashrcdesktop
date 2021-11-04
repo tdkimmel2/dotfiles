@@ -72,7 +72,7 @@ alias google-chrome='google-chrome-stable > /dev/null & disown & exit'
 alias naut='nautilus . > /dev/null & disown & exit'
 
 # Directory Shortcuts
-alias fgdir='cd /home/tkimmel/.local/share/Steam/steamapps/compatdata/252690/pfx/drive_c/users/steamuser/Application\ Data/Fantasy\ Grounds'
+alias fgdir='cd /home/tkimmel/.smiteworks/fgdata'
 
 # SSH Aliases
 alias kekcc='ssh kekcc'
