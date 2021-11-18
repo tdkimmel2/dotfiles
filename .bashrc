@@ -47,18 +47,18 @@ alias ll='ls -lhart --color=auto --group-directories-first'
 alias lsd='ls -d */' # List only directories
 
 alias pcm='sudo pacman' # -S to install, -Rns to remove+dependencies+config files
+alias cln='yay -Yc && sudo paccache -rk1' # Cleans out pacman cache and only keeps last version, not all previous versions
 alias mkpkg='makepkg -si' # Make package from AUR
 alias SS='sudo systemctl'
+alias psg='ps aux | grep' # ps command
+alias disex='disown & exit' # Disown from terminal then exit terminal
+
 alias ccat='highlight --out-format=ansi' # cat with syntax highlighting shortcut
 alias starwars='telnet towel.blinkenlights.nl'
 alias wthr='curl wttr.in' # Display weather
 alias als='alsamixer' # Shortcut for alsamixer
-alias ms='mailsync' # Shortcut for mailsync
-alias cln='yay -Yc && sudo paccache -rk1' # Cleans out pacman cache and only keeps last version, not all previous versions
 alias yta='youtube-dl -x -f bestaudio' # Download only audio from youtube link
 alias jn='jupyter notebook' # Open jupyter notebook
-
-alias disex='disown & exit' # Disown from terminal then exit terminal
 
 # Vim
 alias vimv='vim -O' # Open files in verticle split
@@ -67,20 +67,15 @@ alias vimt='vim -p' # Open files in tabs
 
 alias python='python2' # Make the default python command use python2 rather than python3
 alias py='python3'
-alias psg='ps aux | grep' # ps command
 alias google-chrome='google-chrome-stable > /dev/null & disown & exit'
 alias naut='nautilus . > /dev/null & disown & exit'
+alias dwmbar='/home/tkimmel/builds/dwm/dwm-bar/dwm_bar.sh > /dev/null & disown'
+alias fehbg='feh --bg-scale'
 
 # Directory Shortcuts
 alias fgdir='cd /home/tkimmel/.smiteworks/fgdata'
 
 # SSH Aliases
 alias kekcc='ssh kekcc'
-alias keklogin='ssh -XY tkimmel@login.cc.kek.jp'
-alias bdaqlogin='ssh -XY tkimmel@bdaq.local.kek.jp'
-alias bdaqepicsport='ssh -L 17668:172.22.16.120:17668 -f -N tkimmel@bdaq.local.kek.jp'
-alias bdaqloggerport='ssh -L 17665:172.22.16.120:17665 -f -N tkimmel@bdaq.local.kek.jp'
-alias bdaqvnc='ssh tkimmel@bdaq.local.kek.jp -XY -L 5900:klmpc02.daqnet:5900'
-alias kekvpn='sudo openconnect -u tkimmel/vpn kekvpn.kek.jp'
 alias pil='ssh 192.168.1.111'
 alias piw='ssh kimmelpi.us.to'
