@@ -200,24 +200,6 @@ set hlsearch
   " colorscheme zenburn
 " endif
 
-" ===============================================================
-" C#
-" ===============================================================
-Plugin 'OmniCppComplete'
-
-
-" ===============================================================
-" C#
-" ===============================================================
-Bundle 'OmniSharp/omnisharp-vim'
-let g:syntastic_cs_checkers = ['code_checker']
-let g:ycm_auto_start_csharp_server = 1
-let g:OmniSharp_server_stdio = 1
-let g:OmniSharp_server_use_mono = 1
-
-" ALE
-let g:ale_linters = { 'cs': ['OmniSharp'] }
-
 " XML
 Plugin 'sukima/xmledit'
 Plugin 'matchit.zip'
