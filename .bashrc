@@ -71,6 +71,7 @@ alias google-chrome='google-chrome-stable > /dev/null & disown & exit'
 alias naut='nautilus . > /dev/null & disown & exit'
 alias dwmbar='/home/tkimmel/builds/dwm/dwm-bar/dwm_bar.sh > /dev/null & disown'
 alias fehbg='feh --bg-scale'
+alias brv='nohup brave > /dev/null 2>&1 & exit'
 
 # Directory Shortcuts
 alias fgdir='cd /home/tkimmel/.smiteworks/fgdata'
