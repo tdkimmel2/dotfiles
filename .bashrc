@@ -29,7 +29,10 @@ fi
 set -o vi
 
 # Source root
-source /home/tkimmel/root/bin/thisroot.sh
+source /home/tkimmel/builds/root/rootInstall/bin/thisroot.sh
+# Configure garfield
+export GARFIELD_HOME=/home/tkimmel/builds/garfield
+source $GARFIELD_HOME/install/share/Garfield/setupGarfield.sh
 
 ####################################################################
 ###############################Aliases##############################
@@ -45,6 +48,9 @@ alias ls='ls -hN --color=auto --group-directories-first'
 alias sl='ls -hN --color=auto --group-directories-first'
 alias ll='ls -lhart --color=auto --group-directories-first'
 alias lsd='ls -d */' # List only directories
+
+# grep with color
+alias grep='grep --color=always'
 
 alias pcm='sudo pacman' # -S to install, -Rns to remove+dependencies+config files
 alias cln='yay -Yc && sudo paccache -rk1' # Cleans out pacman cache and only keeps last version, not all previous versions
