@@ -163,7 +163,7 @@ let g:syntastic_python_python_exec = '/usr/bin/python2.7'
 Plugin 'nvie/vim-flake8' " Checks PEP 8 formatting
 Plugin 'vim-scripts/indentpython.vim' " Auto indent for Python
 Plugin 'w0rp/ale' " Autodetect errors
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 Plugin 'tpope/vim-surround'
 " YouCompleteMe
 " let g:ycm_autoclose_preview_window_after_completion=1
