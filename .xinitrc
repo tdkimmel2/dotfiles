@@ -1,8 +1,8 @@
 numlockx &
-setxkbmap -option caps:escape &
+setxkbmap -option caps:swapescape &
 
 #$xrandr to check names of output ports
-xrandr --output DVI-D-0 --auto --right-of HDMI-0 &
+xrandr --output HDMI-0 --primary --mode 1920x1080 --output DVI-D-0 --mode 1600x900 --right-of HDMI-0 &
 
 exec /bin/startdwm
 
