@@ -9,6 +9,9 @@ syntax on
 
 set clipboard=unnamed
 
+" colorscheme slate
+set hlsearch
+
 " Rebind <Leader> key
 let mapleader = ","
 
@@ -61,6 +64,7 @@ inoremap <Leader>ll <Right>
 " Useful mappings
 map <F2> :set nonumber! norelativenumber!<CR>
 map <F6> :setlocal spell! spelllang=en_us<CR>
+set pastetoggle=<F3>
 
 " PEP 8 Indentation
 au BufNewFile,BufRead *.py
@@ -129,6 +133,9 @@ filetype plugin indent on    " required
 " ==============================================================
 " ==============================================================
 
+" Autocomplete
+Plugin 'ycm-core/YouCompleteMe'
+
 " Powerline
 Plugin 'Lokaltog/powerline' , {'rtp': 'powerline/bindings/vim/'}
 """""""""""" Start Powerline Settings """"""""""""""""
@@ -142,7 +149,7 @@ let g:Powerline_symbols = 'fancy'
 set encoding=utf-8
 set t_Co=256
 set fillchars+=stl:\ ,stlnc:\
-set term=xterm-256color
+" set term=xterm-256color
 set termencoding=utf-8
 
 if has("gui_running")
@@ -155,7 +162,13 @@ endif
 
 """"""""""" END of PowerLine Settings  """""""""""""""
 
-
+" Colors
+Plugin 'flazz/vim-colorschemes'
+colorscheme badwolf
+"set background=dark
+"colorscheme gruvbox
+"colorscheme leo
+"colorscheme blackboard
 
 Plugin 'tmhedberg/SimpylFold' " Folding Plugin
 Plugin 'vim-syntastic/syntastic' " Check syntax on each save
@@ -184,22 +197,6 @@ nnoremap <space> za
 let python_highlight_all=1
 
 
-" ===============================================================
-" Colors
-" ===============================================================
-
-Plugin 'flazz/vim-colorschemes'
-
-colorscheme gruvbox
-set background=dark
-set hlsearch
-" if has('gui_running')
-  " set background=dark
-  " colorscheme solarized
-" else
-  " colorscheme zenburn
-" endif
-
 " XML
 Plugin 'sukima/xmledit'
 Plugin 'matchit.zip'
@@ -208,3 +205,6 @@ Plugin 'matchit.zip'
 Plugin 'LaTeX-Suite-aka-Vim-LaTeX'
 let g:Imap_UsePlaceHolders = 0 " Disable <++> placeholders after some shortcuts
 let g:Tex_SmartKeyQuote = 0 " Disable automatic insert of '' when " is typed
+
+" Rust
+Plugin 'rust-lang/rust.vim'
