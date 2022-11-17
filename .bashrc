@@ -11,8 +11,11 @@ if [ "$EUID" -ne 0 ]
     else export PS1="[\[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;88m\]ROOT\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;15m\]@\[$(tput bold)\]$(hostname | awk '{print toupper($0)}') \[$(tput sgr0)\]: \[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;69m\]\W\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;15m\]]\\$\[$(tput sgr0)\]"
 fi
 
-#Add scripts directory to $PATH
-export PATH=$PATH:~/.scripts
+# Set default terminal
+export TERMINAL=st
+
+# Add scripts directory to $PATH
+export PATH=$PATH:~/.scripts:~/builds/dwmblocks/scripts
 
 # Ignore duplicate entries in bash history that appear consecutively
 export HISTCONTROL=ignoreboth:erasedups
@@ -66,6 +69,13 @@ alias als='alsamixer' # Shortcut for alsamixer
 alias yta='youtube-dl -x -f bestaudio' # Download only audio from youtube link
 alias jn='jupyter notebook' # Open jupyter notebook
 
+# Directory Shortcuts
+alias fgdir='cd /home/tkimmel/.smiteworks/fgdata'
+
+# SSH Aliases
+alias pil='ssh 192.168.1.111'
+alias piw='ssh kimmelpi.us.to'
+
 # Vim
 alias vimv='vim -O' # Open files in verticle split
 alias vimh='vim -o' # Open files in horizontal split
@@ -75,14 +85,6 @@ alias python='python2' # Make the default python command use python2 rather than
 alias py='python3'
 alias google-chrome='google-chrome-stable > /dev/null & disown & exit'
 alias naut='nautilus . > /dev/null & disown & exit'
-alias dwmbar='/home/tkimmel/builds/dwm/dwm-bar/dwm_bar.sh > /dev/null & disown'
 alias fehbg='feh --bg-scale'
 alias brv='nohup brave > /dev/null 2>&1 & exit'
-
-# Directory Shortcuts
-alias fgdir='cd /home/tkimmel/.smiteworks/fgdata'
-
-# SSH Aliases
-alias kekcc='ssh kekcc'
-alias pil='ssh 192.168.1.111'
-alias piw='ssh kimmelpi.us.to'
+alias calc='/home/tkimmel/Projects/Rust/calculator/target/release/calculator'
