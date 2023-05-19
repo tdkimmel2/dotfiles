@@ -80,6 +80,7 @@ alias piw='ssh kimmelpi.us.to'
 alias vimv='vim -O' # Open files in verticle split
 alias vimh='vim -o' # Open files in horizontal split
 alias vimt='vim -p' # Open files in tabs
+alias vimr='vim -R' # Open file in read-only
 
 alias python='python2' # Make the default python command use python2 rather than python3
 alias py='python3'
