@@ -1,0 +1,83 @@
+" ==============================================================
+" ==============================================================
+" ==============================================================
+" vimrc
+" ==============================================================
+" ==============================================================
+
+syntax on
+
+set clipboard=unnamed
+
+" Rebind <Leader> key
+let mapleader = ","
+
+" Map sort function to a key (Alphabetically sort lines selected in visual mode)
+vnoremap <Leader>s :sort<CR>
+
+" Set :noh to be <Leader> n in normal mode
+nnoremap <Leader>n :noh<CR>
+
+" Better splits and split navigation
+set splitbelow
+set splitright
+nnoremap <Leader>h <C-W><C-H>
+nnoremap <Leader>j <C-W><C-J>
+nnoremap <Leader>k <C-W><C-K>
+nnoremap <Leader>l <C-W><C-L>
+
+" Saving/Quitting
+nnoremap <Leader>Z :xa<CR>
+nnoremap <Leader>w :w<CR>
+nnoremap <Leader>Q :q!<CR>
+
+" Prevent new line creation after 80 characters
+set wrap
+set textwidth=0
+
+" Tab blocks of code without deselecting it
+vnoremap < <gv
+vnoremap > >gv
+" Tab/Indent Customization
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set shiftround
+set expandtab
+
+set number relativenumber
+
+" Autoclose quotes, braces, curly braces, and parens
+inoremap <Leader>{{ {<CR>}<Esc>ko
+inoremap <Leader>{ {}<Left>
+inoremap <Leader>( ()<Left>
+inoremap <Leader>[ []<Left>
+inoremap <Leader>" ""<Left>
+inoremap <Leader>' ''<Left>
+
+" Useful cursor movement in insert mode
+inoremap <Leader>ll <Right>
+
+" Useful mappings
+map <F2> :set nonumber! norelativenumber!<CR>
+map <F6> :setlocal spell! spelllang=en_us<CR>
+
+" PEP 8 Indentation
+au BufNewFile,BufRead *.py
+    \ set tabstop=4 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
+    \ set expandtab |
+    \ set autoindent |
+    \ set fileformat=unix
+" au BufNewFile,BufRead *.py
+"     \ set tabstop=4 |
+"     \ set softtabstop=4 |
+"     \ set shiftwidth=4 |
+"     \ set textwidth=79 |
+"     \ set expandtab |
+"     \ set autoindent |
+"     \ set fileformat=unix
+
+" UTF-8 encoding
+set encoding=utf-8
