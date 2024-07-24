@@ -32,10 +32,10 @@ fi
 set -o vi
 
 # Source root
-source /home/tkimmel/builds/root/rootInstall/bin/thisroot.sh
+#source /home/tkimmel/builds/root/rootInstall/bin/thisroot.sh
 # Configure garfield
-export GARFIELD_HOME=/home/tkimmel/builds/garfield
-source $GARFIELD_HOME/install/share/Garfield/setupGarfield.sh
+#export GARFIELD_HOME=/home/tkimmel/builds/garfield
+#source $GARFIELD_HOME/install/share/Garfield/setupGarfield.sh
 
 ####################################################################
 ###############################Aliases##############################
@@ -71,6 +71,9 @@ alias jn='jupyter notebook' # Open jupyter notebook
 
 # Directory Shortcuts
 alias fgdir='cd /home/tkimmel/.smiteworks/fgdata'
+alias ttsdir='cd /home/tkimmel/.local/share/Tabletop\ Simulator'
+alias wardir='cd /home/tkimmel/Documents/RPG/Warhammer40k/'
+alias aosdir='cd /home/tkimmel/Documents/RPG/WarhammerAgeOfSigmar/'
 
 # SSH Aliases
 alias pil='ssh 192.168.1.111'
@@ -84,8 +87,9 @@ alias vimr='vim -R' # Open file in read-only
 
 alias python='python2' # Make the default python command use python2 rather than python3
 alias py='python3'
-alias google-chrome='google-chrome-stable > /dev/null & disown & exit'
 alias naut='nautilus . > /dev/null & disown & exit'
 alias fehbg='feh --bg-scale'
-alias brv='nohup brave > /dev/null 2>&1 & exit'
 alias calc='/home/tkimmel/Projects/Rust/calculator/target/release/calculator'
+alias mntstore='sudo mount /dev/sdb2 /mnt/storage'
+alias updatewar='rsync -avh --delete --update /home/tkimmel/Documents/RPG/Warhammer40k/Models/ /mnt/storage/3DPrint/Warhammer40kModels'
+alias updateaos='rsync -avh --delete --update /home/tkimmel/Documents/RPG/WarhammerAgeOfSigmar/Models/ /mnt/storage/3DPrint/WarhammerAoSModels'
