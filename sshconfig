@@ -1,0 +1,41 @@
+Host *
+    ForwardAgent yes
+    ForwardX11 yes
+    ForwardX11Trusted yes
+
+
+## quick ssh login to [HOST] via command "ssh [HostName]" - only need rsa password ##
+
+# use control hub to use only one ssh channel for all connections.
+# faster connection and password only needed for first connection
+# TODO: changes behavior of ssh a bit so uncomment if you want it 
+# ControlMaster auto
+# ControlPath ~/.ssh/%r@%h:%p.control
+# ControlPersist 60m
+
+# make all locally present ssh keys available at the remote site
+ForwardAgent yes
+# try to keep the connection alive, this avoids connection timeouts
+ServerAliveInterval 60
+#Have agent save passphrases
+AddKeysToAgent yes
+
+#KEKCC Forwarding
+Host [HostName]
+	IdentityFile ~/.ssh/id_rsa
+    User [Username]
+    Hostname [ServerAddress]
+    Compression yes
+    # Don't connect directly but rather via the login server
+    ProxyCommand ssh [LoginServer] -W %h:%p
+    # since OpenSSH 7.3 also possible: ProxyJump [LoginServer]
+Host [LoginServer]
+    User [Username]
+
+
+#tdkimmel2 gitHub
+Host github.com-tdkimmel2
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/tdkimmel2
+
