@@ -137,32 +137,6 @@ filetype plugin indent on    " required
 " Autocomplete
 Plugin 'ycm-core/YouCompleteMe'
 
-" Powerline
-Plugin 'Lokaltog/powerline' , {'rtp': 'powerline/bindings/vim/'}
-"""""""""""" Start Powerline Settings """"""""""""""""
-
-" Make sure powerline uses python3
-let g:powerline_pycmd="py3"
-set laststatus=2 " Always display the statusline in all windows
-set showtabline=2 " Always display the tabline, even if there is only one tab
-set guifont=Inconsolata\ for\ Powerline:h15
-let g:Powerline_symbols = 'fancy'
-set encoding=utf-8
-set t_Co=256
-set fillchars+=stl:\ ,stlnc:\
-" set term=xterm-256color
-set termencoding=utf-8
-
-if has("gui_running")
-    let s:uname = system("uname")
-    if s:uname == "Darwin\n"
-        set guifont=Source\ Code\ Pro\ for\ Powerline:h15
-        colorscheme PaperColor              " set color scheme
-    endif
-endif
-
-""""""""""" END of PowerLine Settings  """""""""""""""
-
 " Colors
 Plugin 'flazz/vim-colorschemes'
 colorscheme badwolf
