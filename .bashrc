@@ -55,12 +55,17 @@ alias lsd='ls -d */' # List only directories
 # grep with color
 alias grep='grep --color=always'
 
+# vim alias
+alias vim='nvim'
+alias ovim='/usr/bin/vim'
+
 alias pcm='sudo pacman' # -S to install, -Rns to remove+dependencies+config files
 alias sysupdate='sudo systemctl start reflector.service && yay' # Get fastest mirrors and update
 alias cln='yay -Yc && sudo paccache -rk1' # Cleans out pacman cache and only keeps last version, not all previous versions
 alias mkpkg='makepkg -si' # Make package from AUR
 alias SS='sudo systemctl'
 alias psg='ps aux | grep' # ps command
+alias dush='du -sh * | sort -h'
 alias disex='disown & exit' # Disown from terminal then exit terminal
 
 alias ccat='highlight --out-format=ansi' # cat with syntax highlighting shortcut
@@ -73,6 +78,7 @@ alias jn='jupyter notebook' # Open jupyter notebook
 # Directory Shortcuts
 alias fgdir='cd /home/tkimmel/.smiteworks/fgdata'
 alias ttsdir='cd /home/tkimmel/.local/share/Tabletop\ Simulator'
+alias nmsdir='cd /home/tkimmel/.steam/steam/steamapps/compatdata/275850/pfx/drive_c/users/steamuser/AppData/Roaming/HelloGames/NMS/st_76561198029442146'
 alias protondir='cd /home/tkimmel/.steam/root/compatibilitytools.d/'
 alias wardir='cd /home/tkimmel/Documents/RPG/Warhammer40k/'
 alias aosdir='cd /home/tkimmel/Documents/RPG/WarhammerAgeOfSigmar/'
