@@ -32,9 +32,9 @@ fi
 set -o vi
 
 # Source root
-#source /home/tkimmel/builds/root/rootInstall/bin/thisroot.sh
+#source ~/builds/root/rootInstall/bin/thisroot.sh
 # Configure garfield
-#export GARFIELD_HOME=/home/tkimmel/builds/garfield
+#export GARFIELD_HOME=~/builds/garfield
 #source $GARFIELD_HOME/install/share/Garfield/setupGarfield.sh
 
 ####################################################################
@@ -75,13 +75,15 @@ alias als='alsamixer' # Shortcut for alsamixer
 alias yta='youtube-dl -x -f bestaudio' # Download only audio from youtube link
 alias jn='jupyter notebook' # Open jupyter notebook
 
+alias qis='cd ~/Projects/QuantumComputing/qiskit && source bin/activate'
+
 # Directory Shortcuts
-alias fgdir='cd /home/tkimmel/.smiteworks/fgdata'
-alias ttsdir='cd /home/tkimmel/.local/share/Tabletop\ Simulator'
-alias nmsdir='cd /home/tkimmel/.steam/steam/steamapps/compatdata/275850/pfx/drive_c/users/steamuser/AppData/Roaming/HelloGames/NMS/st_76561198029442146'
-alias protondir='cd /home/tkimmel/.steam/root/compatibilitytools.d/'
-alias wardir='cd /home/tkimmel/Documents/RPG/Warhammer40k/'
-alias aosdir='cd /home/tkimmel/Documents/RPG/WarhammerAgeOfSigmar/'
+alias fgdir='cd ~/.smiteworks/fgdata'
+alias ttsdir='cd ~/.local/share/Tabletop\ Simulator'
+alias nmsdir='cd ~/.steam/steam/steamapps/compatdata/275850/pfx/drive_c/users/steamuser/AppData/Roaming/HelloGames/NMS/st_76561198029442146'
+alias protondir='cd ~/.steam/root/compatibilitytools.d/'
+alias wardir='cd ~/Documents/RPG/Warhammer40k/'
+alias aosdir='cd ~/Documents/RPG/WarhammerAgeOfSigmar/'
 
 # SSH Aliases
 alias pil='ssh 192.168.1.111'
