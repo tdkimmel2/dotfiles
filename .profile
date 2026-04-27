@@ -1,3 +1,3 @@
 [[ -f ~/.bashrc ]] && . ~/.bahsrc
 
-export EDITOR="vim"
+export EDITOR="nvim"

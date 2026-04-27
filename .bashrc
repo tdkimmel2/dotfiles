@@ -15,7 +15,7 @@ fi
 export TERMINAL=st
 
 # Add scripts directory to $PATH
-export PATH=$PATH:~/.scripts:~/builds/dwmblocks/scripts:~/Projects/Physics/rust_physics/
+export PATH=$PATH:~/.scripts:~/builds/dwmblocks/scripts:~/projects/physics/rust_physics/
 
 # Ignore duplicate entries in bash history that appear consecutively
 export HISTCONTROL=ignoreboth:erasedups
@@ -31,11 +31,15 @@ fi
 # Set vi mode for command line
 set -o vi
 
+complete -d cd
+
 # Source root
 #source ~/builds/root/rootInstall/bin/thisroot.sh
 # Configure garfield
 #export GARFIELD_HOME=~/builds/garfield
 #source $GARFIELD_HOME/install/share/Garfield/setupGarfield.sh
+
+export VCPKG_ROOT=~/.local/share/vcpkg
 
 ####################################################################
 ###############################Aliases##############################
@@ -67,6 +71,7 @@ alias SS='sudo systemctl'
 alias psg='ps aux | grep' # ps command
 alias dush='du -sh * | sort -h'
 alias disex='disown & exit' # Disown from terminal then exit terminal
+alias clipboard='xclip -sel c'
 
 alias ccat='highlight --out-format=ansi' # cat with syntax highlighting shortcut
 alias starwars='telnet towel.blinkenlights.nl'
@@ -75,19 +80,17 @@ alias als='alsamixer' # Shortcut for alsamixer
 alias yta='youtube-dl -x -f bestaudio' # Download only audio from youtube link
 alias jn='jupyter notebook' # Open jupyter notebook
 
-alias qis='cd ~/Projects/QuantumComputing/qiskit && source bin/activate'
+alias qis='cd ~/projects/QuantumComputing/qiskit && source bin/activate'
+
+alias refreshWallpaper='feh --bg-scale /home/tkimmel/Pictures/Wallpapers/ArchLinuxDragonWallpaper.jpg'
 
 # Directory Shortcuts
 alias fgdir='cd ~/.smiteworks/fgdata'
 alias ttsdir='cd ~/.local/share/Tabletop\ Simulator'
 alias nmsdir='cd ~/.steam/steam/steamapps/compatdata/275850/pfx/drive_c/users/steamuser/AppData/Roaming/HelloGames/NMS/st_76561198029442146'
 alias protondir='cd ~/.steam/root/compatibilitytools.d/'
-alias wardir='cd ~/Documents/RPG/Warhammer40k/'
-alias aosdir='cd ~/Documents/RPG/WarhammerAgeOfSigmar/'
-
-# SSH Aliases
-alias pil='ssh 192.168.1.111'
-alias piw='ssh kimmelpi.us.to'
+alias wardir='cd ~/Storage/3DPrint/Warhammer40kModels'
+alias satdir='cd ~/.wine/drive_c/Program\ Files/ELEGOO\ SatelLite'
 
 # Vim
 alias vimv='vim -O' # Open files in verticle split
@@ -98,7 +101,6 @@ alias vimr='vim -R' # Open file in read-only
 alias python='python2' # Make the default python command use python2 rather than python3
 alias py='python3'
 alias naut='nautilus . > /dev/null & disown & exit'
-alias fehbg='feh --bg-scale'
 alias mntfantom='sudo mount /dev/sdc1 /mnt/Fantom'
 alias update3d='rsync -avh --delete --update /mnt/storage/3DPrint/ /mnt/Fantom/3DPrint'
 alias updaterpg='rsync -avh --delete --update /mnt/storage/RPG/ /mnt/Fantom/RPG'
